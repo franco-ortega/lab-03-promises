@@ -20,7 +20,6 @@ function copy(src, dst) {
 
 copy('./happyFile.js', './newHappyFile.js')
 
-
 module.exports = {
     copy
 }
