@@ -15,8 +15,14 @@ function transform(src) {
     })
     .then(file => {
         const upperCaseLetters = file.toUpperCase();
-        console.log(upperCaseLetters);
         return upperCaseLetters;
+    })
+    .then(upperCaseLetters => {
+        console.log(upperCaseLetters);
+        return upperCaseLetters.split('').reverse().join('');
+    })
+    .then(upperCaseLetters => {
+        console.log(upperCaseLetters);
     })
     .catch(err => {
         console.log(err);
