@@ -4,14 +4,19 @@ function transform(src) {
     return fsPromises.readFile(src, 'utf-8')
     .then(file => {
         for(let i = 0; i < file.length; i++) {
-            const letter = file[i]
+            const letter = file[i];
 
             if(letter === letter.toUpperCase()) {
                 //letters.push(letter);
                 file = file.replace(letter, ' ')
             }
         }
-        console.log(file);
+        return file;
+    })
+    .then(file => {
+        const upperCaseLetters = file.toUpperCase();
+        console.log(upperCaseLetters);
+        return upperCaseLetters;
     })
     .catch(err => {
         console.log(err);
