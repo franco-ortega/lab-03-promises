@@ -13,7 +13,7 @@ const getCharacter = async(characterId) => {
     return info;
     }
 
-const getManyCharacters = async(characterIds) => {
+const getManyCharacters = (characterIds) => {
     return Promise.all(characterIds.map(id => getCharacter(id)));
     }
 
