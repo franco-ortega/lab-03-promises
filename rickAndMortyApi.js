@@ -1,11 +1,11 @@
 const fetch = require('node-fetch');
 
+const URL = 'https://rickandmortyapi.com/api/character/';
+
 function rickandMortyApi(characterId) {
     
-    return fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
-    .then(response => {
-        return response.json();
-    })
+    return fetch(`${URL}${characterId}`)
+    .then(response => response.json())
     .then(results => {        
         return {
             name: results.name,
