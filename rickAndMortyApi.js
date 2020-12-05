@@ -15,6 +15,16 @@ const getCharacter = async(characterId) => {
 
 const getManyCharacters = async(characterIds) => {
     return Promise.all(characterIds.map(id => getCharacter(id)));
+    }
+
+module.exports = {
+    getCharacter,
+    getManyCharacters
+}
+
+
+
+
 
 
     // const response = await fetch(`${URL}${characterId}`)
@@ -25,13 +35,6 @@ const getManyCharacters = async(characterIds) => {
     //     species: results.species
     // }
     // return info;
-    }
-
-
-
-module.exports = {
-    getCharacter
-}
 
 // return fetch(`${URL}${characterId}`)
     // .then(response => response.json())

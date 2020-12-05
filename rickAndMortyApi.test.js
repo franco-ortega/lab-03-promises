@@ -1,4 +1,4 @@
-const { getCharacter } = require('./rickAndMortyApi');
+const { getCharacter, getManyCharacters } = require('./rickAndMortyApi');
 
 describe('rickAndMortyApi', () => {
     it('takes a character ID and returns the name, status, and species values of the character', async() => {
