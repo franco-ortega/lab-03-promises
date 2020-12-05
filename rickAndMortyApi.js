@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 console.log('start of file')
 const URL = 'https://rickandmortyapi.com/api/character/';
 
-const rickandMortyApi = async(characterId) => {
+const getCharacter = async(characterId) => {
     const response = await fetch(`${URL}${characterId}`)
     const results = await response.json();
     const info = {
@@ -14,7 +14,7 @@ const rickandMortyApi = async(characterId) => {
     }
 
 module.exports = {
-    rickandMortyApi
+    getCharacter
 }
 
 // return fetch(`${URL}${characterId}`)
