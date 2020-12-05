@@ -13,6 +13,22 @@ const getCharacter = async(characterId) => {
     return info;
     }
 
+const getManyCharacters = async(characterIds) => {
+    return Promise.all(characterIds.map(id => getCharacter(id)));
+
+
+    // const response = await fetch(`${URL}${characterId}`)
+    // const results = await response.json();
+    // const info = {
+    //     name: results.name,
+    //     status: results.status,
+    //     species: results.species
+    // }
+    // return info;
+    }
+
+
+
 module.exports = {
     getCharacter
 }
