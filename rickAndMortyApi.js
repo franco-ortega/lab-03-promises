@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-console.log('start of file')
+
 const URL = 'https://rickandmortyapi.com/api/character/';
 
 const getCharacter = async(characterId) => {

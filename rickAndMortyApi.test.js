@@ -23,4 +23,31 @@ describe('rickAndMortyApi', () => {
         expect(result1).toEqual(expected1)
         expect(result2).toEqual(expected2)
     })
+
+    it('takes an array of character IDs and returns a promise with an array of those characters', async() => {
+    
+        const characterIds = [1, 2]
+        const expected = [
+            {
+                name: "Rick Sanchez",
+                status: "Alive",
+                species: "Human"
+            },
+            {
+                name: "Morty Smith",
+                status: "Alive",
+                species: "Human"
+            }
+        ];
+
+        const result = await getManyCharacters(characterIds);
+        
+
+        expect(result).toEqual(expected)
+        
+    })
+
+
+
+
 })
