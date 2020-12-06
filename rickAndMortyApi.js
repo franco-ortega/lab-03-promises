@@ -15,20 +15,41 @@ const getCharacter = async(characterId) => {
 
 const getManyCharacters = async(characterIds) => {
     
-    const [ one, response ] = await characterIds.map(async(id) => {
+    let array = []
+    
+    const response = await characterIds.map(async(id) => {
     const result = await getCharacter(id);
     return result;
     })
 
-    let array = []
-    
-    const uno = await one
-    const duo = await response
+    //TO LOOP:
+    //I want to take each item out of the RESPONSE
+    //I want to set each item equal to a const that awaits
+    //I want to put that const in ARRAY
 
-    array = [uno, duo]
-    
-    
+    for(let i = 0; i < response.length; i++) {
+        const item = response[i]
+
+        const awaitedItem = await item;
+
+        array.push(awaitedItem);
+    }
+
     return array;
+
+
+    // const [ ...results ] = await response;
+    // // const uno = await one
+    // // const duo = await two
+    // array = results;
+    // return array;
+
+    
+    // const [ one, two ] = response;
+    // const uno = await one
+    // const duo = await two
+    // array = [uno, duo]
+    // return array;
 
     
 
