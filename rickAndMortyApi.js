@@ -13,8 +13,34 @@ const getCharacter = async(characterId) => {
     return info;
     }
 
-const getManyCharacters = (characterIds) => {
-    return Promise.all(characterIds.map(id => getCharacter(id)));
+const getManyCharacters = async(characterIds) => {
+    
+    const [ one, response ] = await characterIds.map(async(id) => {
+    const result = await getCharacter(id);
+    return result;
+    })
+
+    let array = []
+    
+    const uno = await one
+    const duo = await response
+
+    array = [uno, duo]
+    
+    
+    return array;
+
+    
+
+
+    // const [response] = await characterIds.map( async id => await getCharacter(id));
+    // return response;
+
+
+
+
+
+    // return Promise.all(characterIds.map(id => getCharacter(id)));
     }
 
 module.exports = {
